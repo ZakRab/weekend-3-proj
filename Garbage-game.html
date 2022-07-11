@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="mystyle-bj.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+
+</head>
+
+
+<body>
+    <header>
+        <h1 class=" text-center">Trash</h1>
+    </header>
+    <main>
+        <section id="mainSection" class="flex flex-row border-5 width100p height-article justify-content-between ">
+            <div class="border-3 width50p flex flex-wrap">
+                <div class="playingCard width20p margin-thin border"></div>
+                <div class="playingCard width20p margin-thin border"></div>
+                <div class="playingCard width20p margin-thin border"></div>
+                <div class="playingCard width20p margin-thin border"></div>
+                <div class="playingCard width20p margin-thin border"></div>
+                <div class="playingCard width20p margin-thin border"></div>
+                <div class="playingCard width20p margin-thin border"></div>
+                <div class="playingCard width20p margin-thin border"></div>
+                <div class="playingCard width20p margin-thin border"></div>
+                <div class="playingCard width20p margin-thin border"></div>
+            </div>
+            <div class="border-3 flex flex-wrap width50p ">
+                <div class="playingCard width20p margin-thin border"></div>
+                <div class="playingCard width20p margin-thin border"></div>
+                <div class="playingCard width20p margin-thin border"></div>
+                <div class="playingCard width20p margin-thin border"></div>
+                <div class="playingCard width20p margin-thin border"></div>
+                <div class="playingCard width20p margin-thin border"></div>
+                <div class="playingCard width20p margin-thin border"></div>
+                <div class="playingCard width20p margin-thin border"></div>
+                <div class="playingCard width20p margin-thin border"></div>
+                <div class="playingCard width20p margin-thin border"></div>
+
+            </div>
+        </section>
+        <div class="block playingCard margin-auto height250px width170px border"></div>
+    </main>
+</body>
+<script>
+    let card = document.getElementsByClassName("playingCard")
+    function deckMaker() {
+        let deck = []
+        let num = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
+        let suits = ["spade", "heart", "club", "diamond"]
+        for (let i = 0; i < num.length; i++) {
+            for (let j = 0; j < suits.length; j++) {
+                let cardNum = num[i]
+                let suit = suits[j]
+                deck.push({ cardNum, suit })
+            }
+
+        }
+        return deck
+    }
+    function shuffleArray(deck) {
+        for (let i = deck.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [deck[i], deck[j]] = [deck[j], deck[i]];
+        }
+        return deck
+    }
+    let myDeck = deckMaker()
+    shuffleArray(myDeck)
+    console.log(myDeck);
+
+    for (let i = 0; i < card.length; i++) {
+        const cards = card[i];
+        cards.addEventListener("click", (e) => {
+            console.log(e.target);
+            e.target.style.backgroundImage = "none"
+            e.target.style.backgroundColor = "aliceblue"
+            if (myDeck[0].suit == "diamond" || myDeck[0].suit == "heart") {
+                e.target.style.color = "red"
+            } else { e.target.style.color = "black" }
+            e.target.innerHTML = `<h1> ${myDeck[0].cardNum} <h1>`
+            console.log(myDeck);
+            myDeck.shift()
+
+
+        })
+
+    }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
+
+</html>

@@ -1,0 +1,177 @@
+
+.playingCard{
+    font-size: 10px;
+    background-image: url(./card-bg.png);
+}
+.flex {
+    display: flex;
+}
+
+.block {
+    display: block;
+}
+
+.border{
+    border: solid black 2px !important;
+}
+
+.width50p{
+    width: calc(50% - 10px) 
+}
+
+.one-third-minus-margin {
+    flex-basis: calc(100% / 3 - 10px);
+}
+
+.one-third {
+    flex-basis: calc(100% / 3);
+}
+
+.flex-basis-content {
+    flex-basis: content;
+}
+
+.width100p {
+    width: 100%;
+}
+
+.width200px {
+    width: 200px
+}
+
+.width170px {
+    width: 170px
+}
+
+.width1500px{
+    width: 1500px;
+}
+.width20p{
+    width: calc(20% - 5px);
+}
+
+.height-min-max{
+    min-height: max-content;
+}
+.height-min100px{
+    min-height: 100px;
+}
+
+.height-article {
+    height: 500px;
+}
+
+.height-tall {
+    height: 650px;
+}
+.height400px{
+    height: 400px;
+}
+.height250px{
+    height: 250px;
+}
+.height100px {
+    height: 100px;
+}
+
+.height-60px {
+    height: 60px;
+}
+
+.bg-blue {
+    background-color: blue;
+}
+.bg-dark-blue{
+    background-color: rgb(45, 54, 112);
+}
+.bg-mute-blue {
+    background-color: rgb(62, 73, 148);
+}
+
+.bg-red {
+    background-color: red;
+}
+
+.bg-dark-red {
+    background-color: darkred;
+}
+
+.bg-green {
+    background-color: green;
+}
+
+.bg-yellow {
+    background-color: yellow;
+}
+.bg-light-gray{
+    background-color: lightgray;
+}
+.bg-dark-gray{
+    background-color: rgb(103, 103, 103);
+}
+
+.bg-light-blue{
+    background-color: lightblue;
+}
+a:hover {
+    background-color: lightblue;
+    color: black !important;
+}
+
+
+.margin-auto {
+    margin: auto;
+}
+
+.margin-thin {
+    margin: 2px;
+}
+
+.margin-thicc {
+    margin-right: 60px;
+    margin-left: 60px;
+}
+
+.margin0 {
+    margin: 0px !important;
+}
+
+.l-r-padding {
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.top-padding {
+    padding-top: 1px;
+}
+
+.padding {
+    padding: 10px;
+}
+
+
+@media (max-width: 700px) {
+    .for-sale-items{
+        width: 100%;
+    }
+}
+@media (max-width: 800px) {
+    .width-thicc{
+        width: 100%;
+    }
+}
+@media (max-width: 800px) {
+    .width-thin{
+        width: 100%;
+    }
+}
+@media (max-width: 1000px) {
+    .one-third-minus-margin{
+        flex-basis: calc(50% - 10px);   
+    }
+}
+@media (max-width: 700px) {
+    .one-third-minus-margin{
+        flex-basis: 100%
+    }
+}
